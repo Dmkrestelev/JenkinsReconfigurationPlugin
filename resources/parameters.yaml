@@ -1,0 +1,34 @@
+# root element
+
+# properties(
+#  [
+#    parameters([[
+#    $class: 'DynamicReferenceParameter',
+#    choiceType: 'ET_FORMATTED_HTML',
+#    description: 'some description',
+#    name: 'name',
+#    omitValueField: false,
+#    randomName: 'choice-parameter-25452792333957',
+#    referencedParameters: 'referenced param',
+#    script: [
+#      $class: 'GroovyScript',
+#      fallbackScript: [
+#        classpath: [],
+#        oldScript: '',
+#        sandbox: false,
+#        script: 'return "return groovy script"'
+#      ],
+#      script: [
+#        classpath: [],
+#        oldScript: '',
+#        sandbox: false,
+#        script: 'return "groovy script"'
+#      ]
+#    ]
+#  ]])
+#  ])
+parameters:
+  - "param1":
+      - ""
+
+  - "param2":

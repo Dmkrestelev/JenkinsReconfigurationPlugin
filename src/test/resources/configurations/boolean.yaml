@@ -1,0 +1,8 @@
+# config for boolean parameter
+parameters:
+  "someBooleanParameterName":
+    "type": "boolean"
+    "referencedParameters": []
+    "description": "some interesting description"
+    "configurations":
+      "defaultValue": false

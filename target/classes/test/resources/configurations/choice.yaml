@@ -1,0 +1,11 @@
+# config for boolean parameter
+parameters:
+  "someChoiceParameterName":
+    "type": "choice"
+    "referencedParameters": []
+    "description": "some interesting description"
+    "configurations":
+      "values":
+        - "a"
+        - "b"
+        - "string with space"
