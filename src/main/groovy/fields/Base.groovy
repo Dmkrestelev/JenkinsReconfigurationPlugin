@@ -1,10 +1,16 @@
 package main.groovy.fields
 
-// base class for all types
+// Base class for all parameters
 class Base {
-    protected String name
-    protected List<String> referencedParameters
-    protected String description
+    String name
+    List<String> referencedParameters
+    String description
+
+    Base(LinkedHashMap<String, Object> parameters) {
+        this.name = parameters?.name as String
+        this.referencedParameters = parameters?.referencedParameters as List<String>
+        this.description = parameters?.description as String
+    }
 
     String getName() {
         return name

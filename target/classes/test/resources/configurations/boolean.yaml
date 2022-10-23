@@ -2,7 +2,7 @@
 parameters:
   "someBooleanParameterName":
     "type": "boolean"
-    "referencedParameters": []
+    "referencedParameters": [1, 2]
     "description": "some interesting description"
     "configurations":
       "defaultValue": false

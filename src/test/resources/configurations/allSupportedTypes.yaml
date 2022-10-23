@@ -1,0 +1,18 @@
+# config for all types
+parameters:
+  "someBooleanParameterName":
+    "type": "boolean"
+    "referencedParameters": []
+    "description": "some interesting description"
+    "configurations":
+      "defaultValue": false
+
+  "someChoiceParameterName":
+    "type": "choice"
+    "referencedParameters": ["someBooleanParameterName"]
+    "description": "some interesting description"
+    "configurations":
+      "values":
+        - "a"
+        - "b"
+        - "string with space"

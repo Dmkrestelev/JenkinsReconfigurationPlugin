@@ -5,8 +5,6 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLMapper
 import main.groovy.fields.ClassFromType
 import main.groovy.fields.Parameters
 
-import java.lang.reflect.Field
-
 class Reconfiguration {
     /**
      * Call Jenkins api
@@ -34,23 +32,19 @@ class Reconfiguration {
     }
 
     /**
-     *
+     * Parse file configuration to classes
+     * @param parameters
+     * @return
      */
-    static parse(HashMap<String, Object> parameters) {
-        List<Object> result
+    static List<Object> parse(HashMap<String, HashMap> parameters) {
+        List<Object> result = []
         parameters.each { key, values ->
             ClassFromType cft = new ClassFromType()
-            Object cls = cft.getClass(values["type"] as String)
-            if (!cls) throw new Exception("This type (${values["type"]}) is unsupported. Please choose one of this types: ${cft.getClassFromType().keySet()}")
-
-            Field[] allFields = cls.class.getDeclaredFields()
-            allFields.each { field ->
-//                values.
-                print(field)
-            }
-//            cls.setName(key).setDescription(values)
-
-            result.add(cls)
+            values.put("name", key)
+            Class cls = cft.getClass(values["type"] as String)
+            Object obj = cls.newInstance(values, values["configurations"])
+            result.add(obj)
         }
+        return result
     }
 }
