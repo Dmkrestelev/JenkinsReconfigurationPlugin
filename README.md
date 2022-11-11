@@ -8,3 +8,7 @@
 5. Jenkins as a code
 6. Simpler than Jenkins API
 7. You may run any groovy constructions in your UI
+
+
+TODO:
+- add logger and log everything

@@ -6,6 +6,8 @@ import main.groovy.fields.ClassFromType
 import main.groovy.fields.Parameters
 
 class Reconfiguration {
+    List<Object> fields = []
+
     /**
      * Call Jenkins api
      */
