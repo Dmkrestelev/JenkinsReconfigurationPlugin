@@ -1,4 +1,4 @@
-package main.groovy.templates
+package main.groovy.templates.choice
 
 class ChoiceTemplate {
     HashMap<String, String> cssClasses = [

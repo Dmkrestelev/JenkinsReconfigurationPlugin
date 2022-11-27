@@ -1,10 +1,12 @@
 package main.groovy.fields
 
-import main.groovy.templates.ChoiceTemplate
+import main.groovy.templates.choice.ChoiceTemplate
 
 class Choice extends Base {
     List<String> values = []
-    String cssFilePath = "./src/main/resources/choice.css"
+    String templateClass = ChoiceTemplate.class
+
+    String cssFilePath = "choice/choice.css"
 
     // TODO validate input data before create an object
     Choice(LinkedHashMap<String, Object> parameters,
@@ -12,7 +14,7 @@ class Choice extends Base {
         // call super constructor
         super(parameters)
         // set template
-        super.template = new ChoiceTemplate()
+        super.template = templateClass
         // set configurations
         this.values = configurations?.values as List<String>
     }

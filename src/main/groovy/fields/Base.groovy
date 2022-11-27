@@ -1,12 +1,14 @@
 package main.groovy.fields
 
-// Base class for all parameters
+import main.groovy.reconfiguration.JenkinsApi
+
+// Base class for all parameters type
 class Base {
     String name
     List<String> referencedParameters
     String description
     Object template
-    String cssFilePath
+    String resourcePath = "./src/main/templates/"
 
     Base(LinkedHashMap<String, Object> parameters) {
         this.name = parameters?.name as String
@@ -36,29 +38,5 @@ class Base {
 
     void setDescription(String description) {
         this.description = description
-    }
-
-    String generate() {
-        String result = ""
-        // read css file
-        // prepare fields for template
-        // read html template
-        // add callback script
-        // return callHtml
-    }
-
-    // TODO add something like a callback to process an answers
-    /**
-     * Callback script
-     */
-    void callback() {
-
-    }
-
-    /**
-     * fallback script
-     */
-    void fallback() {
-
     }
 }
